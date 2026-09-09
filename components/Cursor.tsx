@@ -8,8 +8,12 @@ export function Cursor() {
     if (!matchMedia("(pointer: fine)").matches) return;
     const cursor = ref.current;
     const move = (event: MouseEvent) => { if (cursor) cursor.style.transform = `translate3d(${event.clientX}px,${event.clientY}px,0)`; };
-    const over = (event: MouseEvent) => { if ((event.target as HTMLElement).closest("a,button,[data-cursor]")) cursor?.classList.add("active"); };
-    const out = () => cursor?.classList.remove("active");
+    const over = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      cursor?.classList.toggle("active", Boolean(target.closest("a,button")));
+      cursor?.classList.toggle("project", Boolean(target.closest("[data-cursor]")));
+    };
+    const out = () => { cursor?.classList.remove("active", "project"); };
     window.addEventListener("mousemove", move);
     document.addEventListener("mouseover", over);
     document.addEventListener("mouseout", out);

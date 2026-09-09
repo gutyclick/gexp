@@ -7,26 +7,31 @@ const browser = await chromium.launch({
   headless: true,
 });
 
-const viewports = [
-  ["desktop", 1440, 1000],
-  ["laptop", 1024, 768],
-  ["tablet", 768, 1024],
-  ["mobile", 390, 844],
+const checks = [
+  ["home-desktop", "/", 1440, 1000],
+  ["home-laptop", "/", 1024, 768],
+  ["home-tablet", "/", 768, 1024],
+  ["home-mobile", "/", 390, 844],
+  ["apps-desktop", "/proyectos/apps", 1440, 1000],
+  ["apps-mobile", "/proyectos/apps", 390, 844],
+  ["post-tablet", "/proyectos/post-produccion", 768, 1024],
+  ["crealy-mobile", "/proyectos/crealy", 390, 844],
 ];
 
-for (const [name, width, height] of viewports) {
+for (const [name, pathname, width, height] of checks) {
   const page = await browser.newPage({ viewport: { width, height } });
   const errors = [];
   page.on("console", (message) => {
     if (message.type() === "error") errors.push(message.text());
   });
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle" });
-  await page.waitForTimeout(1400);
+  await page.goto(`http://localhost:3000${pathname}`, { waitUntil: "networkidle" });
+  await page.waitForTimeout(pathname === "/" ? 1400 : 200);
   const dimensions = await page.evaluate(() => ({
     viewport: innerWidth,
     documentWidth: document.documentElement.scrollWidth,
     bodyWidth: document.body.scrollWidth,
     documentHeight: document.documentElement.scrollHeight,
+    cursor: (() => { const element = document.querySelector(".custom-cursor"); if (!element) return null; const rect = element.getBoundingClientRect(); return { display: getComputedStyle(element).display, left: rect.left, top: rect.top, width: rect.width }; })(),
     overflowing: [...document.querySelectorAll("body *")]
       .map((element) => {
         const rect = element.getBoundingClientRect();

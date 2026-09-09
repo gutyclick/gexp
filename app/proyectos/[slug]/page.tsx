@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
+import { Cursor } from "@/components/Cursor";
 import { crealySteps, projects } from "@/data/projects";
 
 export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
@@ -18,10 +19,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = projects.find(item => item.slug === slug);
   if (!project) notFound();
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
-  return <><Header /><main className="case-study">
+  return <><Header /><Cursor /><main className="case-study">
     <section className="case-hero" style={{ "--tone": project.tone } as React.CSSProperties}>
-      <p className="utility">{project.category} · {project.year}</p><h1>{project.name}</h1><p className="case-lead">{project.shortDescription}</p>
-      <div className="case-image"><Image src={project.heroImage} alt={`Vista conceptual de ${project.name}`} fill priority sizes="100vw" /></div>
+      <p className="utility case-label">{project.category} · {project.year}</p>
+      <h1>{project.name}</h1>
+      <div className="case-hero-bottom">
+        <p className="case-lead">{project.shortDescription}</p>
+        <div className="case-image"><Image src={project.heroImage} alt={`Vista conceptual de ${project.name}`} fill priority sizes="(max-width: 760px) 100vw, 58vw" /></div>
+      </div>
     </section>
     <section className="case-intro"><p className="section-kicker utility">El proyecto</p><h2>{project.description}</h2><div className="case-facts"><div><span className="utility">Rol</span>{project.role.map(x => <p key={x}>{x}</p>)}</div><div><span className="utility">Herramientas</span><p>{project.tools.join(" · ")}</p></div>{project.url && <div><span className="utility">En línea</span><a href={project.url} target="_blank" rel="noreferrer">{project.url.replace("https://", "")} ↗</a></div>}</div></section>
     {project.slug === "crealy" && <section className="build-sequence"><p className="section-kicker utility">Del concepto al producto</p><h2>TODO LO NECESARIO<br />PARA HACERLO REAL.</h2><div>{crealySteps.map((step, i) => <div key={step}><span className="utility">{String(i + 1).padStart(2, "0")}</span><strong>{step}</strong></div>)}</div><p className="disclosure">El desarrollo se implementó principalmente con herramientas de desarrollo asistido por IA, bajo mi dirección de producto, pruebas e iteración.</p></section>}

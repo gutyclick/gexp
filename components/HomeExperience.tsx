@@ -34,17 +34,17 @@ export function HomeExperience() {
       <div className="playhead" aria-hidden="true"><span /></div>
       <section className="hero" onMouseMove={movePortrait}>
         <div className="hero-meta utility"><span>Panamá · 2026</span><span>Disponible para oportunidades seleccionadas</span></div>
-        <div className="hero-name" aria-label="Gustavo Ramos Polo">
+        <div className="hero-name" aria-label="Gustavo R. Polo">
           <h1 className="hero-line back"><span>GUSTAVO</span></h1>
-          <div className="hero-portrait">
-            <div className="portrait-inner" style={{ transform: `translate(${portraitConfig.x}px, ${portraitConfig.y}px) scale(${portraitConfig.scale}) rotate(${portraitConfig.rotation}deg)` }}>
-              <Image src={portraitConfig.src} alt="Retrato provisional de Gustavo Ramos Polo" fill priority sizes="(max-width: 768px) 80vw, 42vw" />
-            </div>
+          <h1 className="hero-line front"><span>R. POLO</span></h1>
+        </div>
+        <div className="hero-portrait">
+          <div className="portrait-inner" style={{ transform: `translate(${portraitConfig.x}px, ${portraitConfig.y}px) scale(${portraitConfig.scale}) rotate(${portraitConfig.rotation}deg)` }}>
+            <Image src={portraitConfig.src} alt="Retrato de Gustavo Ramos Polo" fill priority sizes="(max-width: 900px) 64vw, 43vw" />
           </div>
-          <h1 className="hero-line front"><span>RAMOS POLO</span></h1>
         </div>
         <div className="hero-bottom">
-          <p className="hero-title">Tecnólogo creativo<br />y creador de productos digitales</p>
+          <p className="hero-title">Postproductor creativo<br />y creador de productos digitales</p>
           <p className="hero-copy">Convierto ideas poco definidas en experiencias visuales y productos funcionales: aprendo lo necesario, construyo, pruebo y mejoro.</p>
           <div className="hero-actions utility"><a href="#trabajo">Ver mi trabajo ↓</a><a href="/Gustavo-Ramos-Polo-CV.pdf" download>Descargar CV ↘</a></div>
         </div>
@@ -52,7 +52,7 @@ export function HomeExperience() {
 
       <section className="manifesto" aria-labelledby="manifesto-title">
         <p className="section-kicker utility">01 / Manifiesto</p>
-        <h2 id="manifesto-title" data-reveal>CONSTRUYO<br />COSAS.</h2>
+        <h2 id="manifesto-title" data-reveal>TRANSFORMO IDEAS<br />EN EXPERIENCIAS.</h2>
         <div className="manifesto-copy">
           {["Empecé con video.", "Después, diseño.", "Después, sitios web.", "Después, negocios.", "Después, productos digitales.", "La IA cambió cuánto podía construir.", "Hoy, creatividad, producto y tecnología viven en un mismo flujo de trabajo."].map(line => <p className="manifesto-line" key={line}>{line}</p>)}
         </div>
