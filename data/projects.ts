@@ -25,7 +25,7 @@ export const projects: Project[] = [
     heroImage: "/images/projects/crealy.svg", thumbnail: "/images/projects/crealy.svg", gallery: [],
     role: ["Fundador", "Product builder", "Dirección creativa"],
     tools: ["Next.js", "Supabase", "Vercel", "Cloudflare R2", "Stripe", "Sentry", "GitHub", "Codex", "APIs de IA"],
-    metrics: ["Producto de extremo a extremo", "Pagos y sistema de créditos", "Generación y almacenamiento de imágenes"],
+    metrics: ["≈30 usuarios en las primeras semanas", "Producto público; aún sin clientes de pago", "Pagos, créditos y almacenamiento funcionando"],
     url: "https://crealy.app", featured: true, tone: "#d8ff3e",
   },
   {
@@ -34,15 +34,15 @@ export const projects: Project[] = [
     description: "Una práctica audiovisual construida entre televisión, reels, motion, comerciales y contenido digital.",
     heroImage: "/images/projects/post.svg", thumbnail: "/images/projects/post.svg", gallery: [],
     role: ["Editor", "Postproductor", "Diseño de movimiento"], tools: ["Premiere Pro", "After Effects", "Photoshop", "CapCut"],
-    metrics: ["7–8 piezas semanales", "C11 Films", "MEDCOM · Tu Mañana"], featured: true, tone: "#ff542e",
+    metrics: ["7–8 piezas semanales de 3–5 minutos", "C11 Films · 2026—hoy", "MEDCOM · Tu Mañana · 2022—2024"], featured: true, tone: "#ff542e",
   },
   {
     slug: "web", name: "WEB & E-COMMERCE", category: "Experiencias digitales", year: "2021—2026",
     shortDescription: "Sitios que convierten ideas en presencia y ventas.",
-    description: "Diseño, construcción e iteración de experiencias web y comercio electrónico con foco en claridad y resultados.",
+    description: "Sitios informativos y tiendas construidos para clientes reales: desde identidad y contenido hasta catálogo, pagos, inventario, dominio, hosting y publicación.",
     heroImage: "/images/projects/web.svg", thumbnail: "/images/projects/web.svg", gallery: [],
     role: ["Diseño", "Construcción", "Iteración"], tools: ["Next.js", "WordPress", "WooCommerce", "Vercel"],
-    metrics: ["Diseño a despliegue", "E-commerce", "Sistemas editables"], featured: true, tone: "#6e8cff",
+    metrics: ["ZonaTec · relación 2021—2025", "Army Supplements · tienda completa", "CONAPOL · Cray Hill · eventos"], featured: true, tone: "#6e8cff",
   },
   {
     slug: "apps", name: "APPS / EXPERIMENTOS", category: "Prototipos funcionales", year: "2023—2026",
@@ -50,17 +50,17 @@ export const projects: Project[] = [
     description: "Aplicaciones y prototipos nacidos de una pregunta simple: ¿qué hace falta para que esto funcione?",
     heroImage: "/images/projects/apps.svg", thumbnail: "/images/projects/apps.svg", gallery: [],
     role: ["Concepto", "Producto", "Publicación"], tools: ["Android", "AdMob", "IA asistida", "Google Play"],
-    metrics: ["Decide Me · 100+ instalaciones", "Wallpaper Drop · 200+ instalaciones", "Contrato · prototipo"], featured: true, tone: "#ef83b2",
+    metrics: ["Decide Me · 100+ instalaciones", "Wallpaper Drop · 200+ instalaciones", "Contrato · marketplace funcional"], featured: true, tone: "#ef83b2",
   },
 ];
 
 export const experiments = [
-  ["DECIDE ME", "App Android · 100+ instalaciones"],
-  ["WALLPAPER DROP", "App Android · 200+ instalaciones"],
-  ["CONTRATO", "Marketplace freelance para Panamá"],
-  ["LOEDITAMOS.COM", "Experimento de edición productizada"],
-  ["INSPO.BOOST", "36K seguidores · múltiples videos de 1M+"],
-  ["YOUTUBE", "≈2M visualizaciones históricas"],
+  ["DECIDE ME", "2026 · App Android · 100+ instalaciones · anuncios e in-app purchases"],
+  ["WALLPAPER DROP", "2023 · App Android · 200+ instalaciones · AdMob"],
+  ["CONTRATO", "2025 · Marketplace freelance funcional para Panamá · no lanzado"],
+  ["LOEDITAMOS.COM", "2026 · Servicio guiado de edición · detenido al detectar fricción"],
+  ["INSPO.BOOST", "2023 · 36K seguidores en ≈2 meses · tres videos de 1M+"],
+  ["YOUTUBE", "≈9K suscriptores · ≈2M visualizaciones · Partner Program"],
 ];
 
 export const crealySteps = ["Idea", "Diseño de producto", "Desarrollo asistido por IA", "Autenticación", "Generación de imágenes", "Créditos", "Pagos", "Almacenamiento", "Administración", "Despliegue"];
