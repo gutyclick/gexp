@@ -56,3 +56,81 @@ button { color:inherit; font:inherit; }
 @media(max-width:430px){.hero-name{top:48%;bottom:32%}.hero-line{font-size:13.5vw}.hero-portrait{left:18%;width:64%;top:8%;height:39%}.hero-title{font-size:.98rem}.manifesto>h2{font-size:12.3vw}.hero-actions{grid-column:1/-1}}
 @media(max-width:900px){.case-hero{padding:3rem 1.2rem 0;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto 1fr}.case-hero h1{font-size:clamp(3.5rem,13vw,7rem);margin:4rem 0 2rem}.case-hero-bottom{grid-template-columns:1fr 1.25fr;gap:2rem}.case-image{width:100%;height:100%;min-height:18rem}}
 @media(max-width:760px){.case-hero{min-height:auto;grid-template-rows:auto auto auto;padding-top:2.5rem}.case-hero h1{font-size:clamp(2.7rem,11vw,4rem);line-height:.82;margin:3rem 0;width:100%;justify-self:stretch;text-align:left;overflow-wrap:normal;word-break:normal}.case-hero-bottom{grid-template-columns:1fr;gap:1.5rem}.case-lead{margin:0;font-size:1.35rem;max-width:24rem}.case-image{width:calc(100% + 2.4rem);height:auto;min-height:21rem;margin-left:-1.2rem}.case-image img{object-position:center}.case-intro h2{overflow-wrap:anywhere}.build-sequence>div>div{grid-template-columns:3.5rem minmax(0,1fr)}}
+
+/* Pasada de legibilidad y ritmo */
+@media(min-width:1200px){.hero,.manifesto,.chapters,.proof,.work,.experiments,.experience,.skills,.about,.currently,.contact{padding-left:clamp(2.5rem,3vw,4rem);padding-right:clamp(2.5rem,3vw,4rem)}.hero-name{left:8%;width:40%;top:22%}.hero-portrait{right:8%;width:38%;top:10%;height:66%}.site-header{padding-inline:clamp(2.5rem,3vw,4rem)}.hero-bottom{gap:clamp(2rem,4vw,5rem)}}
+
+@media(max-width:900px){
+  body.menu-open{overflow:hidden}
+  .site-header{mix-blend-mode:normal;isolation:isolate;padding:1.1rem 1.25rem;z-index:150;background:rgba(5,5,5,.96);border-bottom:1px solid rgba(255,255,255,.08)}
+  .logo,.menu-button{z-index:152}
+  .menu-button{font-family:var(--font-mono);letter-spacing:.08em;padding:.45rem 0}
+  .nav.open{z-index:151;inset:0;width:100vw;height:100dvh;padding:6.5rem 1.25rem 2rem;display:flex;align-items:stretch;justify-content:flex-start;gap:0;background:#050505;color:var(--white);font:clamp(2.2rem,9vw,4.5rem)/1 var(--font-display);letter-spacing:-.055em;overflow-y:auto}
+  .nav.open a{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #303030}
+  .nav.open a:after{display:none}
+  .nav.open a:last-child{margin-top:auto;border:1px solid #444;padding:1rem}
+}
+
+@media(max-width:760px){
+  .hero{min-height:max(100svh,720px);padding:4.75rem 1.25rem 1.5rem}
+  .hero-meta{position:relative;z-index:4}
+  .hero-portrait{left:12%;right:auto;top:7%;width:76%;height:53%;z-index:1}
+  .hero-name{left:1.25rem;right:1.25rem;top:43%;bottom:auto;width:auto;height:auto;z-index:3;align-items:center;text-align:center}
+  .hero-line{font-size:clamp(3rem,14vw,4.6rem);line-height:.78;text-align:center;width:100%}
+  .hero-line.front{text-align:center}
+  .hero-bottom{grid-template-columns:1fr;gap:1rem;align-items:start}
+  .hero-title,.hero-copy,.hero-actions{grid-column:1/-1}
+  .hero-title{font-size:1.05rem;line-height:1.12;max-width:20rem}
+  .hero-copy{font-size:.93rem;line-height:1.48;max-width:31rem}
+  .hero-actions{flex-direction:row;flex-wrap:wrap;align-items:flex-start;justify-content:flex-start;gap:1rem 1.5rem;margin-top:.35rem}
+
+  .manifesto{min-height:auto;padding:5.5rem 1.25rem}
+  .manifesto>h2{font-size:clamp(2.55rem,10.5vw,4.2rem);line-height:.88;margin:4rem 0 6rem;max-width:10ch}
+  .manifesto-copy{width:100%;margin:0}
+  .manifesto-line{font-size:clamp(1.8rem,8.2vw,2.75rem);line-height:1.08;letter-spacing:-.04em;margin:0 0 1.15em}
+
+  .chapters,.proof,.work,.experiments,.experience,.skills,.about{padding:5.5rem 1.25rem}
+  .section-top{margin-bottom:3.75rem}
+  .section-top h2,.experiments h2,.experience h2{font-size:clamp(2.7rem,11.5vw,4.4rem);line-height:.88;margin-top:2.75rem;overflow-wrap:anywhere}
+  .chapter{display:grid;grid-template-columns:1fr;min-height:0;padding:3.5rem 0;gap:1rem}
+  .chapter time{font-size:clamp(4rem,19vw,6rem);line-height:.8}
+  .chapter h3{font-size:clamp(1.8rem,8vw,2.75rem);margin-bottom:.75rem}
+  .chapter p{font-size:1rem;line-height:1.55;margin:0;max-width:34rem}
+  .metric{padding:2.75rem 0;grid-template-columns:2rem minmax(0,1fr);row-gap:1rem}
+  .metric strong{font-size:clamp(4.75rem,21vw,7rem);line-height:.8}
+  .metric>div{margin-top:.75rem}
+  .metric p{font-size:1rem;line-height:1.45;margin-bottom:.65rem}
+  .work-heading{min-height:0;padding-bottom:4rem;gap:4rem}
+  .work-heading h2{font-size:clamp(2.8rem,11.5vw,4.4rem);line-height:.88}
+  .project-row{min-height:0;padding:2.75rem 0;grid-template-columns:2rem minmax(0,1fr)}
+  .project-row h3{font-size:clamp(2rem,8.5vw,3.2rem);line-height:.94}
+  .project-row p{font-size:.95rem;line-height:1.45;max-width:28rem}
+  .experiment-row{padding:1.65rem 0;gap:.4rem 1rem}
+  .experiment-row strong{font-size:clamp(1.65rem,7.5vw,2.5rem);line-height:1}
+  .experiment-row span{font-size:.9rem;line-height:1.45}
+  .timeline summary{padding:1.6rem 0;gap:.65rem}
+  .timeline summary strong{font-size:clamp(1.5rem,7vw,2.25rem);line-height:1}
+  .experience-detail{font-size:1rem;line-height:1.6;padding:0 0 .75rem}
+  .skills>h2{font-size:clamp(2.8rem,11.5vw,4.4rem);line-height:.9;margin:3.5rem 0 5rem}
+  .skill-groups{gap:2.5rem}
+  .skill-groups p{font-size:1.15rem;line-height:1.25;margin:.55rem 0}
+  .marquee{margin-top:5rem}
+
+  .about>h2{margin:3.5rem 0 2.5rem}
+  .about-statements{font-size:clamp(2.6rem,11vw,4.2rem);line-height:.92;letter-spacing:-.055em}
+  .about-statements span{margin:1.5rem 0}
+  .about-body{margin:5rem 0;font-size:1.08rem;line-height:1.52;letter-spacing:-.012em;max-width:34rem}
+  .about-body p{margin:0 0 1.4rem}
+  .education{gap:3rem}
+  .education strong{font-size:1.2rem;line-height:1.25}
+  .education p{line-height:1.5}
+  .currently{padding:5.5rem 1.25rem;gap:3rem}
+  .currently-lines p{font-size:clamp(1.75rem,8vw,2.7rem);line-height:1.05;margin-bottom:.8rem}
+  .contact{min-height:max(100svh,650px);padding:5.5rem 1.25rem 1.5rem}
+  .contact h2{font-size:clamp(2.55rem,10.8vw,4.25rem);line-height:.88;letter-spacing:-.06em;margin:4rem 0;max-width:9ch}
+  .contact-links{grid-template-columns:1fr;gap:.8rem;font-size:.9rem}
+  .contact-links a{padding:.45rem 0;line-height:1.4}
+  .footer-bottom{margin-top:auto;line-height:1.4}
+}
+
+@media(max-width:360px){.hero{min-height:700px}.hero-portrait{left:10%;width:80%;height:51%}.hero-name{top:42%}.hero-line{font-size:13.5vw}.hero-title{font-size:.98rem}.hero-copy{font-size:.88rem}.nav.open{padding-inline:1rem}.contact h2{font-size:11.5vw}}

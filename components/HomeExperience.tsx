@@ -15,10 +15,13 @@ export function HomeExperience() {
   const root = useRef<HTMLElement>(null);
   useGSAP(() => {
     if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const mobile = matchMedia("(max-width: 760px)").matches;
     gsap.from(".hero-line > span", { yPercent: 115, duration: 1.1, stagger: .08, ease: "power4.out", delay: 1 });
-    gsap.to(".hero-portrait", { yPercent: 22, scale: 1.08, opacity: .3, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1 } });
-    gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => gsap.from(el, { y: 70, opacity: 0, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 86%" } }));
-    gsap.utils.toArray<HTMLElement>(".manifesto-line").forEach((el) => gsap.fromTo(el, { opacity: .12 }, { opacity: 1, scrollTrigger: { trigger: el, start: "top 68%", end: "bottom 45%", scrub: true } }));
+    if (!mobile) {
+      gsap.to(".hero-portrait", { yPercent: 22, scale: 1.08, opacity: .3, scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: 1 } });
+      gsap.utils.toArray<HTMLElement>(".manifesto-line").forEach((el) => gsap.fromTo(el, { opacity: .12 }, { opacity: 1, scrollTrigger: { trigger: el, start: "top 68%", end: "bottom 45%", scrub: true } }));
+    }
+    gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => gsap.from(el, { y: mobile ? 24 : 70, opacity: 0, duration: mobile ? .55 : 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 90%" } }));
   }, { scope: root });
 
   const movePortrait = (event: React.MouseEvent<HTMLDivElement>) => {

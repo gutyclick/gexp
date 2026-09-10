@@ -12,6 +12,7 @@ const checks = [
   ["home-laptop", "/", 1024, 768],
   ["home-tablet", "/", 768, 1024],
   ["home-mobile", "/", 390, 844],
+  ["home-small", "/", 320, 700],
   ["apps-desktop", "/proyectos/apps", 1440, 1000],
   ["apps-mobile", "/proyectos/apps", 390, 844],
   ["post-tablet", "/proyectos/post-produccion", 768, 1024],
@@ -44,6 +45,14 @@ for (const [name, pathname, width, height] of checks) {
   const screenshot = join(tmpdir(), `gexp-${name}.png`);
   await page.screenshot({ path: screenshot, fullPage: true });
   await page.screenshot({ path: join(tmpdir(), `gexp-${name}-top.png`) });
+  if (name === "home-mobile") {
+    await page.getByRole("button", { name: "Abrir menú" }).click();
+    await page.screenshot({ path: join(tmpdir(), "gexp-menu-mobile.png") });
+    await page.getByRole("button", { name: "Cerrar menú" }).click();
+    for (const section of [".manifesto", ".chapters", ".about", ".contact"]) {
+      await page.locator(section).screenshot({ path: join(tmpdir(), `gexp-mobile-${section.slice(1)}.png`) });
+    }
+  }
   console.log(JSON.stringify({ name, ...dimensions, overflow: dimensions.documentWidth > dimensions.viewport, errors, screenshot }));
   await page.close();
 }
