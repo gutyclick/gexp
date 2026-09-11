@@ -17,14 +17,14 @@ const selectedWork = favoriteMediaIds
 export default function SelectedWorkPage() {
   return <main className="favorites-page">
     <Cursor />
-    <header className="favorites-nav"><Link href="/" aria-label="Volver al inicio">GRP.</Link><span className="utility">Selección personal · No indexada</span></header>
+    <header className="favorites-nav"><Link href="/" aria-label="Volver al inicio">GRP.</Link></header>
     <section className="favorites-hero">
       <div className="favorites-count" aria-hidden="true">05</div>
       <div><p className="utility">El corte del editor / 2026</p><h1>CINCO PIEZAS<br />QUE ME<br />REPRESENTAN.</h1></div>
       <p>Una selección breve de trabajos donde la edición, el ritmo y la intención visual se encuentran.</p>
     </section>
     <section className="favorites-work" aria-label="Cinco proyectos seleccionados">
-      <MediaGallery items={selectedWork} showFilters={false} />
+      <MediaGallery items={selectedWork} showFilters={false} showDescriptions />
     </section>
     <footer className="favorites-footer"><p className="utility">Fin de la selección</p><a href="mailto:contacto@gustavorpolo.com">Hablemos ↗</a></footer>
   </main>;

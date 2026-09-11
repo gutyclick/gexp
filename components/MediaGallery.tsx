@@ -19,7 +19,7 @@ function posterUrl(item: PortfolioMedia) {
   return null;
 }
 
-export function MediaGallery({ items, showFilters = true }: { items: PortfolioMedia[]; showFilters?: boolean }) {
+export function MediaGallery({ items, showFilters = true, showDescriptions = false }: { items: PortfolioMedia[]; showFilters?: boolean; showDescriptions?: boolean }) {
   const [filter, setFilter] = useState<(typeof mediaCategories)[number]>("Todo");
   const [active, setActive] = useState<PortfolioMedia | null>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
@@ -46,7 +46,7 @@ export function MediaGallery({ items, showFilters = true }: { items: PortfolioMe
           <span className="media-play">{item.videoId ? "PLAY" : item.image ? "VER" : "+ INFO"}</span>
           <span className="media-time utility">{item.duration}</span>
         </button>
-        <div className="media-caption"><div><h2>{item.title}</h2><p>{item.client}</p></div><div className="utility"><span>{item.category}</span><span>{item.year}</span></div></div>
+        <div className="media-caption"><div><h2>{item.title}</h2><p>{item.client}</p></div>{showDescriptions && <p className="media-description">{item.description}</p>}<div className="utility"><span>{item.category}</span><span>{item.year}</span></div></div>
       </article>)}
     </div>
     {active && <div className="player-overlay" role="dialog" aria-modal="true" aria-label={active.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}>
