@@ -26,7 +26,7 @@ export const experiences = [
 export const chapters = [
   { year: "2017", title: "YouTube", text: "Aprendí a producir de principio a fin: concepto, cámara, edición, miniatura, SEO y publicación. Cerca de 2M de visualizaciones." },
   { year: "2022", title: "Televisión + comercio", text: "Entré a TV nacional mientras construía sitios, tiendas y operaba mis propios experimentos de e-commerce." },
-  { year: "2023", title: "Apps + contenido", text: "Publiqué Wallpaper Drop y convertí un formato repetible de TikTok en 36K seguidores en dos meses." },
+  { year: "2023", title: "Apps + contenido", text: "Publiqué WallDrop y convertí un formato repetible de TikTok en 36K seguidores en dos meses." },
   { year: "2024", title: "Operaciones reales", text: "Administré inventario, caja, proveedores y márgenes. Entendí lo que ocurre después de crear algo." },
   { year: "2025", title: "Productos + eventos", text: "Prototipé un marketplace local y construí registro, QR, web y piezas para eventos de inteligencia y ciberseguridad." },
   { year: "2026", title: "IA como infraestructura", text: "Volví a postproducción de TV, lancé Crealy y publiqué Decide Me usando desarrollo asistido por IA." },

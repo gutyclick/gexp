@@ -50,14 +50,14 @@ export const projects: Project[] = [
     description: "Aplicaciones y prototipos nacidos de una pregunta simple: ¿qué hace falta para que esto funcione?",
     heroImage: "/images/projects/apps.svg", thumbnail: "/images/projects/apps.svg", gallery: [],
     role: ["Concepto", "Producto", "Publicación"], tools: ["Android", "AdMob", "IA asistida", "Google Play"],
-    metrics: ["Decide Me · 100+ instalaciones", "Wallpaper Drop · 200+ instalaciones", "Contrato · marketplace funcional"], featured: true, tone: "#ef83b2",
+    metrics: ["Decide Me · 100+ instalaciones", "WallDrop · 200+ instalaciones", "Contratao · marketplace funcional"], featured: true, tone: "#ef83b2",
   },
 ];
 
 export const experiments = [
   ["DECIDE ME", "2026 · App Android · 100+ instalaciones · anuncios e in-app purchases"],
-  ["WALLPAPER DROP", "2023 · App Android · 200+ instalaciones · AdMob"],
-  ["CONTRATO", "2025 · Marketplace freelance funcional para Panamá · no lanzado"],
+  ["WALLDROP", "2023 · App Android · 200+ instalaciones · AdMob"],
+  ["CONTRATAO", "2025 · Marketplace freelance funcional para Panamá · no lanzado"],
   ["LOEDITAMOS.COM", "2026 · Servicio guiado de edición · detenido al detectar fricción"],
   ["INSPO.BOOST", "2023 · 36K seguidores en ≈2 meses · tres videos de 1M+"],
   ["YOUTUBE", "≈9K suscriptores · ≈2M visualizaciones · Partner Program"],

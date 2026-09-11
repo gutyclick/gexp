@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import Image from "next/image";
 import type { PortfolioMedia } from "@/data/postproduction";
 import { mediaCategories } from "@/data/postproduction";
 
 function embedUrl(item: PortfolioMedia) {
-  if (!item.videoId) return null;
+  if (item.kind === "image" || !item.videoId) return null;
   return item.platform === "youtube"
     ? `https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0&modestbranding=1`
     : `https://player.vimeo.com/video/${item.videoId}?autoplay=1&title=0&byline=0&portrait=0`;
@@ -31,10 +32,11 @@ export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
     </div>
     <div className="media-grid">
       {visible.map((item, index) => <article className={`media-item media-${item.format}`} key={item.id}>
-        <button className="media-poster" onClick={() => setActive(item)} aria-label={`${item.videoId ? "Reproducir" : "Ver ficha de"} ${item.title}`}>
+        <button className={`media-poster ${item.image ? "has-image" : ""}`} onClick={() => setActive(item)} aria-label={`${item.videoId ? "Reproducir" : "Ver"} ${item.title}`}>
+          {item.image && <Image src={item.image} alt="" fill sizes="(max-width: 760px) 100vw, 60vw" />}
           <span className="media-no utility">{String(index + 1).padStart(2, "0")}</span>
           <span className="media-frame" aria-hidden="true"><i /><i /><i /><i /></span>
-          <span className="media-play">{item.videoId ? "PLAY" : "+ INFO"}</span>
+          <span className="media-play">{item.videoId ? "PLAY" : item.image ? "VER" : "+ INFO"}</span>
           <span className="media-time utility">{item.duration}</span>
         </button>
         <div className="media-caption"><div><h2>{item.title}</h2><p>{item.client}</p></div><div className="utility"><span>{item.category}</span><span>{item.year}</span></div></div>
@@ -44,7 +46,7 @@ export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
       <div className="player-shell">
         <div className="player-top"><div><span className="utility">{active.category} · {active.year}</span><h2>{active.title}</h2></div><button ref={closeButton} onClick={() => setActive(null)}>Cerrar ×</button></div>
         <div className="player-stage">
-          {embedUrl(active) ? <iframe src={embedUrl(active)!} title={active.title} allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen /> : <div className="player-empty"><span className="utility">Media pendiente</span><strong>LISTO PARA<br />{active.platform.toUpperCase()}</strong><p>Añade el ID del video en <code>data/postproduction.ts</code>.</p></div>}
+          {active.image ? <div className="player-image"><Image src={active.image} alt={active.title} fill sizes="100vw" priority /></div> : embedUrl(active) ? <iframe src={embedUrl(active)!} title={active.title} allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen /> : <div className="player-empty"><span className="utility">Media pendiente</span><strong>LISTO PARA<br />{active.platform?.toUpperCase()}</strong><p>Añade el ID del video en <code>data/postproduction.ts</code>.</p></div>}
         </div>
         <div className="player-info"><p>{active.description}</p><span className="utility">{active.client} · {active.duration}</span></div>
       </div>

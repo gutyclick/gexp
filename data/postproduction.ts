@@ -1,5 +1,5 @@
 export type MediaPlatform = "youtube" | "vimeo";
-export type MediaCategory = "Televisión" | "Comerciales" | "Motion" | "Social";
+export type MediaCategory = "Televisión" | "Comerciales" | "Motion" | "Social" | "Diseño gráfico";
 
 export type PortfolioMedia = {
   id: string;
@@ -9,8 +9,10 @@ export type PortfolioMedia = {
   year: string;
   duration: string;
   format: "wide" | "portrait" | "square";
-  platform: MediaPlatform;
-  videoId: string;
+  kind?: "video" | "image";
+  platform?: MediaPlatform;
+  videoId?: string;
+  image?: string;
   description: string;
 };
 
@@ -26,4 +28,4 @@ export const postproductionMedia: PortfolioMedia[] = [
   { id: "eventos-especiales", title: "Eventos y segmentos", client: "Selección freelance", category: "Televisión", year: "2021—2026", duration: "02:15", format: "wide", platform: "vimeo", videoId: "", description: "Entrevistas, eventos, contenido institucional y piezas especiales construidas desde material bruto." },
 ];
 
-export const mediaCategories = ["Todo", "Televisión", "Comerciales", "Motion", "Social"] as const;
+export const mediaCategories = ["Todo", "Televisión", "Comerciales", "Motion", "Social", "Diseño gráfico"] as const;
