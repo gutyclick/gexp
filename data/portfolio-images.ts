@@ -12,18 +12,6 @@ import type { PortfolioMedia } from "./postproduction";
  */
 export const portfolioImages: PortfolioMedia[] = [
   {
-    id: "flyer-ciberescudo-2025",
-    kind: "image",
-    title: "Ciberescudo 2025",
-    client: "Evento de ciberseguridad",
-    category: "Diseño gráfico",
-    year: "2025",
-    duration: "FLYER",
-    format: "portrait",
-    image: "/img/flyers/CIBERSESCUDO2025.png",
-    description: "Diseño de pieza promocional para comunicar la identidad, temática e información principal del evento Ciberescudo 2025.",
-  },
-  {
     id: "flyer-guzzfx",
     kind: "image",
     title: "Identidad GuzzFX",
@@ -34,18 +22,6 @@ export const portfolioImages: PortfolioMedia[] = [
     format: "wide",
     image: "/img/flyers/HERO-GUZZFX.png",
     description: "Composición visual principal para presentar un producto con una estética clara, digital y reconocible.",
-  },
-  {
-    id: "flyer-agenda",
-    kind: "image",
-    title: "Agenda de evento",
-    client: "Comunicación de evento",
-    category: "Diseño gráfico",
-    year: "2025",
-    duration: "FLYER",
-    format: "portrait",
-    image: "/img/flyers/POST AGENDA 1.png",
-    description: "Diseño de agenda informativa con jerarquía visual para facilitar la lectura de horarios, participantes y actividades.",
   },
   {
     id: "flyer-seminario",
