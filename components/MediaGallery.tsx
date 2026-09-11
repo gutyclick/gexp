@@ -12,6 +12,12 @@ function embedUrl(item: PortfolioMedia) {
     : `https://player.vimeo.com/video/${item.videoId}?autoplay=1&title=0&byline=0&portrait=0`;
 }
 
+function posterUrl(item: PortfolioMedia) {
+  if (item.image) return item.image;
+  if (item.platform === "youtube" && item.videoId) return `https://i.ytimg.com/vi/${item.videoId}/hqdefault.jpg`;
+  return null;
+}
+
 export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
   const [filter, setFilter] = useState<(typeof mediaCategories)[number]>("Todo");
   const [active, setActive] = useState<PortfolioMedia | null>(null);
@@ -32,8 +38,8 @@ export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
     </div>
     <div className="media-grid">
       {visible.map((item, index) => <article className={`media-item media-${item.format}`} key={item.id}>
-        <button className={`media-poster ${item.image ? "has-image" : ""}`} onClick={() => setActive(item)} aria-label={`${item.videoId ? "Reproducir" : "Ver"} ${item.title}`}>
-          {item.image && <Image src={item.image} alt="" fill sizes="(max-width: 760px) 100vw, 60vw" />}
+        <button className={`media-poster ${posterUrl(item) ? "has-image" : ""}`} onClick={() => setActive(item)} aria-label={`${item.videoId ? "Reproducir" : "Ver"} ${item.title}`}>
+          {posterUrl(item) && <Image src={posterUrl(item)!} alt="" fill sizes="(max-width: 760px) 100vw, 60vw" unoptimized={posterUrl(item)!.startsWith("https://")} />}
           <span className="media-no utility">{String(index + 1).padStart(2, "0")}</span>
           <span className="media-frame" aria-hidden="true"><i /><i /><i /><i /></span>
           <span className="media-play">{item.videoId ? "PLAY" : item.image ? "VER" : "+ INFO"}</span>
@@ -45,7 +51,7 @@ export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
     {active && <div className="player-overlay" role="dialog" aria-modal="true" aria-label={active.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}>
       <div className="player-shell">
         <div className="player-top"><div><span className="utility">{active.category} · {active.year}</span><h2>{active.title}</h2></div><button ref={closeButton} onClick={() => setActive(null)}>Cerrar ×</button></div>
-        <div className="player-stage">
+        <div className={`player-stage player-stage-${active.format}`}>
           {active.image ? <div className="player-image"><Image src={active.image} alt={active.title} fill sizes="100vw" priority /></div> : embedUrl(active) ? <iframe src={embedUrl(active)!} title={active.title} allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen /> : <div className="player-empty"><span className="utility">Media pendiente</span><strong>LISTO PARA<br />{active.platform?.toUpperCase()}</strong><p>Añade el ID del video en <code>data/postproduction.ts</code>.</p></div>}
         </div>
         <div className="player-info"><p>{active.description}</p><span className="utility">{active.client} · {active.duration}</span></div>

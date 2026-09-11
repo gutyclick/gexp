@@ -22,7 +22,7 @@ export const projects: Project[] = [
     slug: "crealy", name: "CREALY", category: "Producto con IA", year: "2026",
     shortDescription: "De una idea a un producto de IA funcional.",
     description: "Plataforma impulsada por IA para ayudar a creadores y negocios a producir contenido visual atractivo sin dominar prompts ni herramientas de diseño.",
-    heroImage: "/images/projects/crealy.svg", thumbnail: "/images/projects/crealy.svg", gallery: [],
+    heroImage: "/images/projects/crealy.svg", thumbnail: "/images/projects/crealy.svg", gallery: ["/img/logos/logo crealy blanco.png"],
     role: ["Fundador", "Product builder", "Dirección creativa"],
     tools: ["Next.js", "Supabase", "Vercel", "Cloudflare R2", "Stripe", "Sentry", "GitHub", "Codex", "APIs de IA"],
     metrics: ["≈30 usuarios en las primeras semanas", "Producto público; aún sin clientes de pago", "Pagos, créditos y almacenamiento funcionando"],

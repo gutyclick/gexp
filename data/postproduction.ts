@@ -20,12 +20,42 @@ export type PortfolioMedia = {
 // YouTube: youtube.com/watch?v=ESTE_ES_EL_ID
 // Vimeo: vimeo.com/ESTE_ES_EL_ID
 export const postproductionMedia: PortfolioMedia[] = [
-  { id: "tv-reportajes", title: "Reportajes e historias", client: "C11 Films · Tu Mañana", category: "Televisión", year: "2026", duration: "03:40", format: "wide", platform: "vimeo", videoId: "", description: "Construcción narrativa, edición, mezcla y acabado de piezas semanales para televisión nacional." },
-  { id: "calle7-kids", title: "Calle 7 Kids", client: "C11 Films", category: "Motion", year: "2026", duration: "00:45", format: "portrait", platform: "youtube", videoId: "", description: "Animación y recursos visuales asistidos por IA para una pieza emitida en televisión." },
-  { id: "promo-navidad", title: "Promo de Navidad", client: "MEDCOM · Tu Mañana", category: "Comerciales", year: "2023", duration: "00:30", format: "wide", platform: "vimeo", videoId: "", description: "Chroma key, composición, efectos y diseño gráfico para una promoción especial." },
-  { id: "identidad-promos", title: "Sistema visual de promos", client: "MEDCOM", category: "Motion", year: "2023", duration: "01:10", format: "square", platform: "youtube", videoId: "", description: "Rediseño del lenguaje de promos con iconografía, animación y elementos reutilizables." },
-  { id: "contenido-comercial", title: "Contenido comercial", client: "Army Supplements", category: "Social", year: "2022—2025", duration: "00:24", format: "portrait", platform: "youtube", videoId: "", description: "Edición de reels y piezas promocionales adaptadas al ritmo de plataformas sociales." },
-  { id: "eventos-especiales", title: "Eventos y segmentos", client: "Selección freelance", category: "Televisión", year: "2021—2026", duration: "02:15", format: "wide", platform: "vimeo", videoId: "", description: "Entrevistas, eventos, contenido institucional y piezas especiales construidas desde material bruto." },
+  {
+    id: "insomnio",
+    title: "Inmsomnio",
+    client: "Pieza personal",
+    category: "Social",
+    year: "2026",
+    duration: "REEL",
+    format: "portrait",
+    platform: "youtube",
+    videoId: "8YOBSCOrwM8",
+    description: "Reel conceptual creado como una pieza personal para redes sociales, inspirado en la experiencia del insomnio y la sensación de permanecer mentalmente activo durante la noche. La pieza utiliza técnicas de superposición y exposición para integrar mi silueta con diferentes momentos del video, creando una narrativa más introspectiva y experimental. El trabajo fue realizado en Adobe Premiere Pro, incluyendo edición, colorización, composición y efectos visuales.",
+  },
+  {
+    id: "levitating",
+    title: "Levitating",
+    client: "Pieza personal",
+    category: "Motion",
+    year: "2026",
+    duration: "REEL",
+    format: "portrait",
+    platform: "youtube",
+    videoId: "_CUnv93Xq3s",
+    description: "Pieza audiovisual experimental creada para redes sociales, combinando generación de imágenes con inteligencia artificial, composición y edición de video. A partir de una fotografía se generaron diferentes ángulos y perspectivas del personaje mediante Higgsfield AI, simulando movimientos de cámara alrededor del sujeto. Posteriormente trabajé la composición en Adobe Premiere Pro, incorporando rotoscopía, integración de textos en profundidad, efectos de ruido, glow, colorización y diseño de efectos de sonido. La música utilizada pertenece a terceros y la pieza fue realizada con fines artísticos.",
+  },
+  {
+    id: "cumbre-global-2025",
+    title: "Cumbre Global 2025",
+    client: "Segunda Cumbre Global de Inteligencia + Estrategia",
+    category: "Comerciales",
+    year: "2025",
+    duration: "REEL",
+    format: "portrait",
+    platform: "youtube",
+    videoId: "K5A6lHW7rJo",
+    description: "Pieza promocional en formato reel desarrollada para la Segunda Cumbre Global de Inteligencia + Estrategia Panamá 2025. El video fue creado para promocionar el evento en redes sociales y campañas publicitarias, con un enfoque directo en impulsar la reserva y compra de entradas. Me encargué de la edición, ritmo visual y composición de la pieza, complementando el material con elementos gráficos desarrollados en Adobe Photoshop. La edición final y adaptación para redes sociales se realizó en Adobe Premiere Pro.",
+  },
 ];
 
 export const mediaCategories = ["Todo", "Televisión", "Comerciales", "Motion", "Social", "Diseño gráfico"] as const;

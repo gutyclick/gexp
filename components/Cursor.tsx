@@ -12,8 +12,9 @@ export function Cursor() {
       const target = event.target as HTMLElement;
       cursor?.classList.toggle("active", Boolean(target.closest("a,button")));
       cursor?.classList.toggle("project", Boolean(target.closest("[data-cursor]")));
+      cursor?.classList.toggle("media", Boolean(target.closest(".media-poster,.player-overlay")));
     };
-    const out = () => { cursor?.classList.remove("active", "project"); };
+    const out = () => { cursor?.classList.remove("active", "project", "media"); };
     window.addEventListener("mousemove", move);
     document.addEventListener("mouseover", over);
     document.addEventListener("mouseout", out);
