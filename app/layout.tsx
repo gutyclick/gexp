@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Archivo, Archivo_Black, IBM_Plex_Mono } from "next/font/google";
+import { LanguageController } from "@/components/LanguageController";
 import "./globals.css";
 
 const body = Archivo({ subsets: ["latin"], variable: "--font-body" });
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={`${body.variable} ${display.variable} ${mono.variable}`}>{children}</body>
+      <body className={`${body.variable} ${display.variable} ${mono.variable}`}>{children}<LanguageController /></body>
     </html>
   );
 }

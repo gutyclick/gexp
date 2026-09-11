@@ -22,6 +22,54 @@ export type PortfolioMedia = {
 // Vimeo: vimeo.com/ESTE_ES_EL_ID
 export const postproductionMedia: PortfolioMedia[] = [
   {
+    id: "preventa-tu-manana",
+    title: "Preventa · Tu Mañana",
+    client: "MEDCOM · Tu Mañana",
+    category: "Comerciales",
+    year: "2023",
+    duration: "PROMO",
+    format: "wide",
+    platform: "youtube",
+    videoId: "OmH631eK5pI",
+    description: "Promo creada para la preventa de Tu Mañana, un encuentro en el que clientes estratégicos conocen el programa y reservan espacios comerciales. Me encargué de construir una pieza clara y dinámica para presentar la propuesta del show, combinando edición, composición y motion graphics en Adobe Premiere Pro y After Effects.",
+  },
+  {
+    id: "navidad-tu-manana-2023",
+    title: "Navidad · Tu Mañana",
+    client: "MEDCOM · Tu Mañana",
+    category: "Televisión",
+    year: "2023",
+    duration: "PROMO",
+    format: "wide",
+    platform: "youtube",
+    videoId: "e1wta3hpH_Q",
+    description: "Promo navideña de Tu Mañana 2023. Estuve a cargo de la postproducción y de los efectos visuales que construyen la atmósfera festiva de la pieza, trabajando la edición y composición con Adobe Premiere Pro y After Effects.",
+  },
+  {
+    id: "promo-presets",
+    title: "Promo de presets",
+    client: "Producto digital",
+    category: "Comerciales",
+    year: "2023",
+    duration: "REEL",
+    format: "portrait",
+    platform: "youtube",
+    videoId: "RvkkQsGBsWc",
+    description: "Reel promocional para un producto digital compuesto por presets fotográficos y recursos dirigidos a diseñadores gráficos. La pieza presenta el producto con un ritmo ágil, demostraciones visuales y motion graphics desarrollados en Adobe Premiere Pro y After Effects.",
+  },
+  {
+    id: "photoshop-layers",
+    title: "Photoshop Layers",
+    client: "Proyecto personal",
+    category: "Motion",
+    year: "2023",
+    duration: "REEL",
+    format: "portrait",
+    platform: "youtube",
+    videoId: "3Flc1aDeoJ0",
+    description: "Proyecto personal que transforma la interfaz de Adobe Photoshop en parte de la narrativa. Utilicé Photoshop como base gráfica y reimaginé el proceso de composición mediante capas, controles y elementos animados posteriormente en Adobe After Effects.",
+  },
+  {
     id: "insomnio",
     title: "Inmsomnio",
     client: "Pieza personal",
@@ -110,5 +158,13 @@ export const postproductionMedia: PortfolioMedia[] = [
     description: "Pieza promocional creada para la marca de ropa Atypical Culture.",
   },
 ];
+
+export const favoriteMediaIds = [
+  "preventa-tu-manana",
+  "navidad-tu-manana-2023",
+  "levitating",
+  "daleclick-box",
+  "promo-presets",
+] as const;
 
 export const mediaCategories = ["Todo", "Televisión", "Comerciales", "Motion", "Social", "Diseño gráfico"] as const;

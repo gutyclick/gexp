@@ -19,6 +19,8 @@ const checks = [
   ["crealy-mobile", "/proyectos/crealy", 390, 844],
   ["portfolio-video-desktop", "/portafolio/postproduccion", 1440, 1000],
   ["portfolio-video-mobile", "/portafolio/postproduccion", 390, 844],
+  ["selection-desktop", "/seleccion", 1440, 1000],
+  ["selection-mobile", "/seleccion", 390, 844],
 ];
 
 for (const [name, pathname, width, height] of checks) {
@@ -54,6 +56,22 @@ for (const [name, pathname, width, height] of checks) {
     for (const section of [".manifesto", ".chapters", ".about", ".contact"]) {
       await page.locator(section).screenshot({ path: join(tmpdir(), `gexp-mobile-${section.slice(1)}.png`) });
     }
+    await page.getByRole("button", { name: "EN", exact: true }).click();
+    await page.waitForTimeout(100);
+    const mobileEnglish = await page.evaluate(() => ({ language: document.documentElement.lang, overflow: document.documentElement.scrollWidth > innerWidth, title: document.querySelector(".hero-title")?.textContent }));
+    console.log(JSON.stringify({ name: "language-switch-mobile", ...mobileEnglish }));
+    await page.screenshot({ path: join(tmpdir(), "gexp-home-english-mobile.png") });
+  }
+  if (name === "home-desktop") {
+    await page.getByRole("button", { name: "EN", exact: true }).click();
+    await page.waitForTimeout(100);
+    const languageState = await page.evaluate(() => ({ language: document.documentElement.lang, manifesto: document.querySelector("#manifesto-title")?.textContent }));
+    console.log(JSON.stringify({ name: "language-switch", ...languageState }));
+    await page.screenshot({ path: join(tmpdir(), "gexp-home-english.png") });
+    await page.goto("http://localhost:3000/portafolio/postproduccion", { waitUntil: "networkidle" });
+    await page.waitForTimeout(100);
+    const portfolioLanguage = await page.evaluate(() => ({ language: document.documentElement.lang, heading: document.querySelector(".portfolio-hero h1")?.textContent, gallery: document.querySelector("#gallery-title")?.textContent }));
+    console.log(JSON.stringify({ name: "language-persistence", ...portfolioLanguage }));
   }
   if (name === "portfolio-video-mobile") {
     await page.locator(".media-poster").first().click();

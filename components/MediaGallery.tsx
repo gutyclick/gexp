@@ -19,7 +19,7 @@ function posterUrl(item: PortfolioMedia) {
   return null;
 }
 
-export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
+export function MediaGallery({ items, showFilters = true }: { items: PortfolioMedia[]; showFilters?: boolean }) {
   const [filter, setFilter] = useState<(typeof mediaCategories)[number]>("Todo");
   const [active, setActive] = useState<PortfolioMedia | null>(null);
   const closeButton = useRef<HTMLButtonElement>(null);
@@ -34,9 +34,9 @@ export function MediaGallery({ items }: { items: PortfolioMedia[] }) {
   }, [active]);
 
   return <>
-    <div className="media-filters" role="group" aria-label="Filtrar portafolio">
+    {showFilters && <div className="media-filters" role="group" aria-label="Filtrar portafolio">
       {mediaCategories.map(category => <button key={category} className={filter === category ? "selected" : ""} onClick={() => setFilter(category)}>{category}</button>)}
-    </div>
+    </div>}
     <div className="media-grid">
       {visible.map((item, index) => <article className={`media-item media-${item.format}`} key={item.id}>
         <button className={`media-poster ${posterUrl(item) ? "has-image" : ""}`} onClick={() => setActive(item)} aria-label={`${item.videoId ? "Reproducir" : "Ver"} ${item.title}`}>
