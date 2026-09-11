@@ -17,6 +17,8 @@ const checks = [
   ["apps-mobile", "/proyectos/apps", 390, 844],
   ["post-tablet", "/proyectos/post-produccion", 768, 1024],
   ["crealy-mobile", "/proyectos/crealy", 390, 844],
+  ["portfolio-video-desktop", "/portafolio/postproduccion", 1440, 1000],
+  ["portfolio-video-mobile", "/portafolio/postproduccion", 390, 844],
 ];
 
 for (const [name, pathname, width, height] of checks) {
@@ -52,6 +54,11 @@ for (const [name, pathname, width, height] of checks) {
     for (const section of [".manifesto", ".chapters", ".about", ".contact"]) {
       await page.locator(section).screenshot({ path: join(tmpdir(), `gexp-mobile-${section.slice(1)}.png`) });
     }
+  }
+  if (name === "portfolio-video-mobile") {
+    await page.locator(".media-poster").first().click();
+    await page.screenshot({ path: join(tmpdir(), "gexp-player-mobile.png") });
+    await page.getByRole("button", { name: "Cerrar ×" }).click();
   }
   console.log(JSON.stringify({ name, ...dimensions, overflow: dimensions.documentWidth > dimensions.viewport, errors, screenshot }));
   await page.close();

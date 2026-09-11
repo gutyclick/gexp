@@ -83,6 +83,15 @@ export function HomeExperience() {
         ))}</div>
       </section>
 
+      <section className="portfolio-invite" aria-labelledby="portfolio-invite-title">
+        <div className="portfolio-invite-label"><p className="section-kicker utility">Portafolio / Postproducción</p><span className="utility">TV · Motion · Comercial · Social</span></div>
+        <div className="portfolio-invite-main">
+          <div className="invite-frame" aria-hidden="true"><span>00:01:18:12</span><i>▶</i><b>REC</b></div>
+          <h2 id="portfolio-invite-title">NO SOLO EL<br />RESULTADO.<br /><em>EL RITMO.</em></h2>
+        </div>
+        <div className="portfolio-invite-bottom"><p>Una selección dedicada de edición, postproducción, motion graphics y piezas para televisión.</p><Link href="/portafolio/postproduccion">Entrar a la sala de edición <span>↗</span></Link></div>
+      </section>
+
       <section className="experiments" aria-labelledby="experiments-title">
         <div className="section-top"><p className="section-kicker utility">05 / Experimentos</p><h2 id="experiments-title">COSAS QUE<br />HE CONSTRUIDO</h2></div>
         <div>{experiments.map(([name, detail]) => <div className="experiment-row" key={name}><strong>{name}</strong><span>{detail}</span><i aria-hidden="true">↗</i></div>)}</div>

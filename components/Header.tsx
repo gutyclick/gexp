@@ -17,6 +17,7 @@ export function Header() {
       <button className="menu-button" onClick={() => setOpen(!open)} aria-expanded={open} aria-controls="main-nav" aria-label={open ? "Cerrar menú" : "Abrir menú"}>{open ? "Cerrar ×" : "Menú +"}</button>
       <nav id="main-nav" className={open ? "nav open" : "nav"} aria-label="Navegación principal">
         <Link href="/#trabajo" onClick={() => setOpen(false)}>Trabajo</Link>
+        <Link href="/portafolio/postproduccion" onClick={() => setOpen(false)}>Portafolio</Link>
         <Link href="/#sobre-mi" onClick={() => setOpen(false)}>Sobre mí</Link>
         <Link href="/#experiencia" onClick={() => setOpen(false)}>Experiencia</Link>
         <Link href="/#contacto" onClick={() => setOpen(false)}>Contacto</Link>
