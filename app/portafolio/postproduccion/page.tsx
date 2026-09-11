@@ -16,7 +16,7 @@ export default function PostproductionPortfolio() {
     <section className="portfolio-hero">
       <p className="utility">Portafolio / Postproducción · 2018—2026</p>
       <h1>IMAGEN.<br />RITMO.<br />HISTORIA.</h1>
-      <div className="portfolio-intro"><p>Una selección de piezas construidas para televisión, marcas y plataformas digitales.</p><div className="portfolio-reel"><span className="utility">Showreel</span><strong>01:30</strong><i>▶</i></div></div>
+      <div className="portfolio-intro"><p>Una selección de piezas construidas para televisión, marcas y plataformas digitales.</p></div>
     </section>
     <section className="portfolio-gallery" aria-labelledby="gallery-title">
       <div className="portfolio-gallery-head"><p className="utility">Selección de trabajo</p><h2 id="gallery-title">LA EDICIÓN<br />COMO LENGUAJE.</h2><p>Filtra por disciplina. Cada pieza abre en un reproductor integrado sin abandonar el sitio.</p></div>

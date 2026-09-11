@@ -14,7 +14,7 @@ function embedUrl(item: PortfolioMedia) {
 
 function posterUrl(item: PortfolioMedia) {
   if (item.image) return item.image;
-  if (item.platform === "youtube" && item.videoId) return `https://i.ytimg.com/vi/${item.videoId}/hqdefault.jpg`;
+  if (item.platform === "youtube" && item.videoId) return `https://i.ytimg.com/vi/${item.videoId}/maxresdefault.jpg`;
   return null;
 }
 
