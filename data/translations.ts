@@ -245,8 +245,6 @@ export const translations: Record<string, string> = {
   "Comunicaciones": "Communications",
   "Identidad GuzzFX": "GuzzFX identity",
   "Composición visual principal para presentar un producto con una estética clara, digital y reconocible.": "Main visual composition designed to present a product with a clear, digital and recognisable aesthetic.",
-  "Seminario": "Seminar",
-  "Comunicación institucional": "Institutional communications",
   "Pieza gráfica creada para promocionar un seminario y organizar su información de forma directa y atractiva.": "Graphic piece created to promote a seminar and organise its information clearly and attractively.",
   "ENE 2026 — HOY": "JAN 2026 — PRESENT",
   "2024 — HOY": "2024 — PRESENT",

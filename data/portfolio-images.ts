@@ -23,16 +23,4 @@ export const portfolioImages: PortfolioMedia[] = [
     image: "/img/flyers/HERO-GUZZFX.png",
     description: "Composición visual principal para presentar un producto con una estética clara, digital y reconocible.",
   },
-  {
-    id: "flyer-seminario",
-    kind: "image",
-    title: "Seminario",
-    client: "Comunicación institucional",
-    category: "Diseño gráfico",
-    year: "2025",
-    duration: "FLYER",
-    format: "portrait",
-    image: "/img/flyers/SEMINARIO.png",
-    description: "Pieza gráfica creada para promocionar un seminario y organizar su información de forma directa y atractiva.",
-  },
 ];

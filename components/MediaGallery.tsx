@@ -46,12 +46,12 @@ export function MediaGallery({ items, showFilters = true, showDescriptions = fal
           <span className="media-play">{item.videoId ? "PLAY" : item.image ? "VER" : "+ INFO"}</span>
           <span className="media-time utility">{item.duration}</span>
         </button>
-        <div className="media-caption"><div><h2>{item.title}</h2><p>{item.client}</p></div>{showDescriptions && <p className="media-description">{item.description}</p>}<div className="utility"><span>{item.category}</span><span>{item.year}</span></div></div>
+        <div className="media-caption"><div><h2>{item.title}</h2><p>{item.client}</p></div>{showDescriptions && <p className="media-description">{item.description}</p>}<div className="utility"><span>{item.category}</span></div></div>
       </article>)}
     </div>
     {active && <div className="player-overlay" role="dialog" aria-modal="true" aria-label={active.title} onMouseDown={(event) => { if (event.target === event.currentTarget) setActive(null); }}>
       <div className="player-shell">
-        <div className="player-top"><div><span className="utility">{active.category} · {active.year}</span><h2>{active.title}</h2></div><button ref={closeButton} onClick={() => setActive(null)}>Cerrar ×</button></div>
+        <div className="player-top"><div><span className="utility">{active.category}</span><h2>{active.title}</h2></div><button ref={closeButton} onClick={() => setActive(null)}>Cerrar ×</button></div>
         <div className={`player-stage player-stage-${active.format}`}>
           {active.image ? <div className="player-image"><Image src={active.image} alt={active.title} fill sizes="100vw" priority /></div> : embedUrl(active) ? <iframe src={embedUrl(active)!} title={active.title} allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen /> : <div className="player-empty"><span className="utility">Media pendiente</span><strong>LISTO PARA<br />{active.platform?.toUpperCase()}</strong><p>Añade el ID del video en <code>data/postproduction.ts</code>.</p></div>}
         </div>
