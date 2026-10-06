@@ -53,7 +53,7 @@ for (const [name, pathname, width, height] of checks) {
     await page.getByRole("button", { name: "Abrir menú" }).click();
     await page.screenshot({ path: join(tmpdir(), "gexp-menu-mobile.png") });
     await page.getByRole("button", { name: "Cerrar menú" }).click();
-    for (const section of [".manifesto", ".chapters", ".about", ".contact"]) {
+    for (const section of [".home-featured", ".profile-home", ".home-experience", ".contact"]) {
       await page.locator(section).screenshot({ path: join(tmpdir(), `gexp-mobile-${section.slice(1)}.png`) });
     }
     await page.getByRole("button", { name: "EN", exact: true }).click();
@@ -65,7 +65,7 @@ for (const [name, pathname, width, height] of checks) {
   if (name === "home-desktop") {
     await page.getByRole("button", { name: "EN", exact: true }).click();
     await page.waitForTimeout(100);
-    const languageState = await page.evaluate(() => ({ language: document.documentElement.lang, manifesto: document.querySelector("#manifesto-title")?.textContent }));
+    const languageState = await page.evaluate(() => ({ language: document.documentElement.lang, featured: document.querySelector("#featured-title")?.textContent }));
     console.log(JSON.stringify({ name: "language-switch", ...languageState }));
     await page.screenshot({ path: join(tmpdir(), "gexp-home-english.png") });
     await page.goto("http://localhost:3000/portafolio/postproduccion", { waitUntil: "networkidle" });

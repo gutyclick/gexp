@@ -37,8 +37,10 @@ export function MediaGallery({ items, showFilters = true, showDescriptions = fal
     {showFilters && <div className="media-filters" role="group" aria-label="Filtrar portafolio">
       {mediaCategories.map(category => <button key={category} className={filter === category ? "selected" : ""} onClick={() => setFilter(category)}>{category}</button>)}
     </div>}
-    <div className="media-grid">
+    <div className="media-grid edit-sequence">
+      <div className="edit-sequence-rail" aria-hidden="true"><span /></div>
       {visible.map((item, index) => <article className={`media-item media-${item.format}`} key={item.id}>
+        <div className="edit-cut" aria-hidden="true"><span>{`00:${String(index * 7).padStart(2, "0")}:00`}</span><i /></div>
         <button className={`media-poster ${posterUrl(item) ? "has-image" : ""}`} onClick={() => setActive(item)} aria-label={`${item.videoId ? "Reproducir" : "Ver"} ${item.title}`}>
           {posterUrl(item) && <Image src={posterUrl(item)!} alt="" fill sizes="(max-width: 760px) 100vw, 60vw" unoptimized={posterUrl(item)!.startsWith("https://")} />}
           <span className="media-no utility">{String(index + 1).padStart(2, "0")}</span>
