@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
-import { Cursor } from "@/components/Cursor";
 import { crealySteps, projects } from "@/data/projects";
 
 export function generateStaticParams() { return projects.map(({ slug }) => ({ slug })); }
@@ -19,7 +18,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const project = projects.find(item => item.slug === slug);
   if (!project) notFound();
   const next = projects[(projects.indexOf(project) + 1) % projects.length];
-  return <><Header /><Cursor /><main className="case-study">
+  return <><Header /><main className="case-study">
     <section className="case-hero" style={{ "--tone": project.tone } as React.CSSProperties}>
       <p className="utility case-label">{project.category} · {project.year}</p>
       <h1>{project.name}</h1>

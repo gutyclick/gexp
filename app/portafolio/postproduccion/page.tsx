@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cursor } from "@/components/Cursor";
 import { Header } from "@/components/Header";
 import { MediaGallery } from "@/components/MediaGallery";
 import { postproductionMedia } from "@/data/postproduction";
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function PostproductionPortfolio() {
-  return <><Header /><Cursor /><main className="portfolio-page">
+  return <><Header /><main className="portfolio-page">
     <section className="portfolio-hero">
       <p className="utility">Portafolio / Postproducción · 2018—2026</p>
       <h1>IMAGEN.<br />RITMO.<br />HISTORIA.</h1>

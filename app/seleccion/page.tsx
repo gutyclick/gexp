@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Cursor } from "@/components/Cursor";
 import { MediaGallery } from "@/components/MediaGallery";
 import { favoriteMediaIds, postproductionMedia } from "@/data/postproduction";
 
@@ -16,7 +15,6 @@ const selectedWork = favoriteMediaIds
 
 export default function SelectedWorkPage() {
   return <main className="favorites-page">
-    <Cursor />
     <header className="favorites-nav"><Link href="/" aria-label="Volver al inicio">GRP.</Link></header>
     <section className="favorites-hero">
       <div className="favorites-count" aria-hidden="true">05</div>

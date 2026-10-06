@@ -57,7 +57,7 @@ export function HomeExperience() {
         <p className="section-kicker utility">01 / Manifiesto</p>
         <h2 id="manifesto-title" data-reveal>TRANSFORMO IDEAS<br />EN EXPERIENCIAS.</h2>
         <div className="manifesto-copy">
-          {["Empecé con video.", "Después, diseño.", "Después, sitios web.", "Después, negocios.", "Después, productos digitales.", "La IA cambió cuánto podía construir.", "Hoy, creatividad, producto y tecnología viven en un mismo flujo de trabajo."].map(line => <p className="manifesto-line" key={line}>{line}</p>)}
+          {["Empecé con video.", "El diseño amplió el lenguaje.", "La tecnología amplió lo posible.", "Hoy todo vive en un mismo proceso creativo."].map(line => <p className="manifesto-line" key={line}>{line}</p>)}
         </div>
       </section>
 
@@ -74,7 +74,7 @@ export function HomeExperience() {
       <section className="work" id="trabajo" aria-labelledby="work-title">
         <div className="work-heading"><p className="section-kicker utility">04 / Trabajo seleccionado</p><h2 id="work-title" data-reveal>TRABAJO<br />SELECCIONADO</h2></div>
         <div className="project-list">{projects.map((project, index) => (
-          <Link href={`/proyectos/${project.slug}`} className="project-row" key={project.slug} data-cursor>
+          <Link href={`/proyectos/${project.slug}`} className="project-row" key={project.slug}>
             <span className="project-index utility">0{index + 1}</span>
             <div><h3>{project.name}</h3><p>{project.shortDescription}</p></div>
             <div className="project-meta utility"><span>{project.category}</span><span>{project.year}</span></div>
