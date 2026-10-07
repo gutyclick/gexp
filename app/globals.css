@@ -205,6 +205,14 @@ button { color:inherit; font:inherit; }
 .portfolio-gallery .edit-sequence-rail{background:#c9c9c5}
 .favorites-work .edit-sequence{padding-left:0}
 .favorites-work .edit-sequence-rail,.favorites-work .edit-cut{display:none}
+.media-toolbar{position:sticky;z-index:25;top:3.6rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;margin:0 -2rem 7rem;padding:1rem 2rem;background:rgba(244,244,241,.94);border-block:1px solid #c8c8c4;backdrop-filter:blur(14px)}
+.media-toolbar .media-filters{margin:0}.media-count{white-space:nowrap;color:#686868}
+.media-groups{display:grid;gap:11rem}
+.media-format-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #aaa;margin-bottom:5rem;padding-bottom:1rem;color:#606060}
+.media-format-group .edit-sequence .media-item:last-child{margin-bottom:0}
+.media-more{display:flex;justify-content:center;margin-top:10rem;border-top:1px solid #aaa;padding-top:3rem}
+.media-more button{width:min(42rem,100%);display:flex;justify-content:space-between;align-items:center;border:1px solid #111;background:#111;color:#fff;padding:1.25rem 1.5rem;font-size:clamp(1.15rem,2vw,1.7rem);transition:background .25s,color .25s}
+.media-more button:hover,.media-more button:focus-visible{background:transparent;color:#111}.media-more button span{font: .65rem var(--font-mono);border:1px solid currentColor;border-radius:99px;padding:.3rem .55rem}
 
 @media(max-width:760px){
   .home-featured{padding:6rem 1.25rem}
@@ -225,6 +233,12 @@ button { color:inherit; font:inherit; }
   .edit-cut i{left:0;box-shadow:0 0 0 4px var(--white)}
   .edit-cut:after{left:.35rem;width:1.65rem}
   .home-experience{padding-top:7rem}
+  .media-toolbar{top:4.15rem;display:block;margin:0 -1.25rem 5rem;padding:.85rem 1.25rem}
+  .media-toolbar .media-filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:.35rem;scrollbar-width:none}.media-toolbar .media-filters::-webkit-scrollbar{display:none}
+  .media-toolbar .media-filters button{flex:0 0 auto}
+  .media-count{display:block;margin-top:.6rem}
+  .media-groups{gap:7rem}.media-format-head{margin-bottom:3.5rem}
+  .media-more{margin-top:6rem;padding-top:2rem}
 }
 .player-stage-square{aspect-ratio:1;width:min(68vh,100%);margin-inline:auto}
 .media-placeholder>a{display:inline-block;margin-top:3rem;border-bottom:1px solid #777;padding-bottom:.6rem;font-size:clamp(1.1rem,2vw,2rem)}
