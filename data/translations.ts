@@ -6,6 +6,7 @@ export const translations: Record<string, string> = {
   "Navegación principal": "Main navigation",
   "Trabajo": "Work",
   "Portafolio": "Portfolio",
+  "Explorar": "Explore",
   "Portafolio destacado / 03 cortes": "Featured portfolio / 03 cuts",
   "Formato horizontal": "Horizontal format",
   "Reels verticales": "Vertical reels",

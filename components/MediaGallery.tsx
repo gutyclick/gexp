@@ -73,13 +73,14 @@ export function MediaGallery({ items, showFilters = true, showDescriptions = fal
 
   return <>
     {showFilters && <div className="media-toolbar">
+      <span className="media-toolbar-title utility">Explorar</span>
       <div className="media-filters" role="group" aria-label="Filtrar portafolio">
-        {mediaCategories.map(category => <button key={category} className={filter === category ? "selected" : ""} onClick={() => { setFilter(category); setLimit(6); }}>{category}</button>)}
+        {mediaCategories.map(category => <button key={category} type="button" className={filter === category ? "selected" : ""} aria-pressed={filter === category} onClick={() => { setFilter(category); setLimit(6); }}>{category}</button>)}
       </div>
       <span className="media-count utility" aria-live="polite"><span>{Math.min(displayed.length, visible.length)} / {visible.length}</span> <span>piezas</span></span>
     </div>}
     <div className="media-groups">
-      {groups.map(group => <section className="media-format-group" key={group.label || "selection"} aria-label={group.label || undefined}>
+      {groups.map(group => <section className={`media-format-group ${group.label === "Reels verticales" ? "media-format-portrait" : "media-format-wide"}`} key={group.label || "selection"} aria-label={group.label || undefined}>
         {group.label && <div className="media-format-head"><span className="utility">{group.label}</span><span className="utility"><span>{String(group.items.length).padStart(2, "0")}</span> <span>piezas</span></span></div>}
         <div className="media-grid edit-sequence">
           <div className="edit-sequence-rail" aria-hidden="true"><span /></div>
