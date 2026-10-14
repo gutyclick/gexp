@@ -7,13 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { MediaGallery } from "@/components/MediaGallery";
-import { favoriteMediaIds, postproductionMedia } from "@/data/postproduction";
+import { featuredMediaIds, postproductionMedia } from "@/data/postproduction";
 import { experiences, portraitConfig } from "@/data/site";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-const featuredWork = favoriteMediaIds
-  .slice(0, 3)
+const featuredWork = featuredMediaIds
   .map(id => postproductionMedia.find(item => item.id === id))
   .filter(item => item !== undefined);
 

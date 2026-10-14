@@ -1,11 +1,20 @@
 export type MediaPlatform = "youtube" | "vimeo";
-export type MediaCategory = "Televisión" | "Comerciales" | "Motion" | "Social" | "Diseño gráfico";
+export type MediaCategory = "Televisión" | "Comerciales" | "Motion" | "Social" | "Diseño gráfico" | "Creaciones con IA";
+
+export type MediaCaseStudy = {
+  objective: string;
+  responsibility: string;
+  tools: string[];
+  creativeDecision: string;
+  outcome: string;
+};
 
 export type PortfolioMedia = {
   id: string;
   title: string;
   client: string;
   category: MediaCategory;
+  additionalCategories?: MediaCategory[];
   year: string;
   duration: string;
   format: "wide" | "portrait" | "square";
@@ -15,6 +24,7 @@ export type PortfolioMedia = {
   image?: string;
   thumbnail?: string;
   description: string;
+  caseStudy?: MediaCaseStudy;
 };
 
 // Pega únicamente el ID de YouTube o Vimeo en `videoId`.
@@ -30,7 +40,7 @@ export const postproductionMedia: PortfolioMedia[] = [
     duration: "PROMO",
     format: "wide",
     platform: "youtube",
-    videoId: "OmH631eK5pI",
+    videoId: "yCBR3v52JCQ",
     description: "Promo creada para la preventa de Tu Mañana, un encuentro en el que clientes estratégicos conocen el programa y reservan espacios comerciales. Me encargué de construir una pieza clara y dinámica para presentar la propuesta del show, combinando edición, composición y motion graphics en Adobe Premiere Pro y After Effects.",
   },
   {
@@ -91,7 +101,28 @@ export const postproductionMedia: PortfolioMedia[] = [
     format: "portrait",
     platform: "youtube",
     videoId: "_CUnv93Xq3s",
+    additionalCategories: ["Creaciones con IA"],
     description: "Pieza audiovisual experimental creada para redes sociales, combinando generación de imágenes con inteligencia artificial, composición y edición de video. A partir de una fotografía se generaron diferentes ángulos y perspectivas del personaje mediante Higgsfield AI, simulando movimientos de cámara alrededor del sujeto. Posteriormente trabajé la composición en Adobe Premiere Pro, incorporando rotoscopía, integración de textos en profundidad, efectos de ruido, glow, colorización y diseño de efectos de sonido. La música utilizada pertenece a terceros y la pieza fue realizada con fines artísticos.",
+  },
+  {
+    id: "ugc-fitness-ia",
+    title: "UGC fitness · Demo con IA",
+    client: "Campaña conceptual · Producto ficticio",
+    category: "Creaciones con IA",
+    additionalCategories: ["Social", "Comerciales"],
+    year: "2026",
+    duration: "REEL",
+    format: "portrait",
+    platform: "youtube",
+    videoId: "W676D2oea34",
+    description: "Demo de anuncio UGC nativo para redes sociales. Construí una historia cotidiana alrededor de un producto ficticio generado con IA: una corredora comparte su rutina en un parque y, después, muestra el producto durante un descanso. La pieza busca reconocimiento de marca con el tono espontáneo de una historia personal, sin recurrir a una venta directa.",
+    caseStudy: {
+      objective: "Explorar cómo presentar un producto ficticio a una audiencia joven mediante una pieza de reconocimiento de marca que se sienta como contenido cotidiano de redes sociales, no como un anuncio de venta directa.",
+      responsibility: "Desarrollé el concepto, el guion visual y la secuencia de dos escenas. Definí el encuadre en primera persona, los textos nativos que funcionan como gancho y transición, la narración de estilo diario y la integración del producto. Generé los recursos con IA y realicé la edición final en Adobe Premiere Pro.",
+      tools: ["Veo 3.1 · video", "GPT Image 2.5 vía API · imágenes", "ElevenLabs · voz personalizada", "Suno AI · música", "Adobe Premiere Pro · edición"],
+      creativeDecision: "La primera escena presenta a una chica fitness corriendo de forma casual en un parque. El punto de vista y el texto sobreimpreso imitan una historia de Instagram para captar la atención sin interrumpir la experiencia. En la segunda escena, ella descansa junto a un árbol y toma el producto; otro texto sugiere que encontró una solución. La voz conecta ambos momentos como si fueran parte de su diario, mientras el entorno natural mantiene la pieza cercana y creíble.",
+      outcome: "Pieza conceptual terminada como demostración de un formato UGC para redes sociales. El producto y la campaña son ficticios; no se atribuyen ventas, alcance ni resultados de publicación.",
+    },
   },
   {
     id: "cumbre-global-2025",
@@ -167,4 +198,10 @@ export const favoriteMediaIds = [
   "promo-presets",
 ] as const;
 
-export const mediaCategories = ["Todo", "Televisión", "Comerciales", "Motion", "Social", "Diseño gráfico"] as const;
+export const featuredMediaIds = [
+  "preventa-tu-manana",
+  "navidad-tu-manana-2023",
+  "ugc-fitness-ia",
+] as const;
+
+export const mediaCategories = ["Todo", "Televisión", "Comerciales", "Motion", "Social", "Diseño gráfico", "Creaciones con IA"] as const;

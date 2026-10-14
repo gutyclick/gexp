@@ -7,7 +7,7 @@ import { portfolioImages } from "@/data/portfolio-images";
 
 export const metadata: Metadata = {
   title: "Portafolio de postproducción — Gustavo R. Polo",
-  description: "Selección de edición, televisión, motion graphics, comerciales y contenido social de Gustavo R. Polo.",
+  description: "Selección de edición, televisión, motion graphics, comerciales, contenido social y creaciones con IA de Gustavo R. Polo.",
 };
 
 export default function PostproductionPortfolio() {
